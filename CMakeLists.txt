@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8.3)
-project(ira_photonfocus_driver)
+project(polarcam_driver)
 
 set(CMAKE_BUILD_TYPE Debug)
 
@@ -246,7 +246,7 @@ endif(NOT GNUTLS_FOUND)
 # )
 
 generate_dynamic_reconfigure_options(
-  cfg/photonfocus.cfg
+  cfg/polarcam.cfg
 )
 
 ###################################
@@ -283,13 +283,13 @@ include_directories(
 # add_library(photonfocus_camera
 #   src/${PROJECT_NAME}/photonfocus_camera.cpp
 # )
-add_library(ira_photonfocus src/photonfocus_camera.cpp)
+add_library(polarcam_lib src/photonfocus_camera.cpp)
 
 ## Declare a cpp executable
 # add_executable(photonfocus_camera_node src/photonfocus_camera_node.cpp)
 
 # DRIVER
-add_executable(ira_photonfocus_driver src/photonfocus_driver.cpp)
+add_executable(polarcam_driver src/photonfocus_driver.cpp)
 
 # UTILITIES
 add_executable(set_ip src/utilities/set_ip.cpp)
@@ -298,22 +298,22 @@ add_executable(find_camera src/utilities/find_camera.cpp)
 ## Add cmake target dependencies of the executable/library
 ## as an example, message headers may need to be generated before nodes
 # add_dependencies(photonfocus_camera_node photonfocus_camera_generate_messages_cpp)
-add_dependencies(ira_photonfocus_driver ${PROJECT_NAME}_gencfg)
+add_dependencies(polarcam_driver ${PROJECT_NAME}_gencfg)
 
 
 ## Specify libraries to link a library or executable target against
 # target_link_libraries(photonfocus_camera_node
 #   ${catkin_LIBRARIES}
 # )
-target_link_libraries(ira_photonfocus
+target_link_libraries(polarcam_lib
     ${EBUS_LIBRARIES}
     ${OpenCV_LIBRARIES}
     ${Boost_LIBRARIES}
     ${GNUTLS_LIBRARIES}
 )
 
-target_link_libraries(ira_photonfocus_driver
-    ira_photonfocus
+target_link_libraries(polarcam_driver
+    polarcam_lib
     ${EBUS_LIBRARIES}
     ${catkin_LIBRARIES}
     ${GNUTLS_LIBRARIES}

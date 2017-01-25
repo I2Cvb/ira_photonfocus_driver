@@ -1,6 +1,6 @@
 Polarcam_driver
 ======================
-This deriver is adapted from ira_photonfocus_driver which is detailed by IRALAB. 
+This deriver is adapted from ira_photonfocus_driver provided by IRALAB. 
 This branch is modified in order to be suitable for polarcam. 
 The master branch is updated with the IRALAB release. 
 If you clone this repo from I2Cvb and would like to update the master branch follow the steps below:

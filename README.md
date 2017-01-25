@@ -1,3 +1,18 @@
+Polarcam_driver
+======================
+This deriver is adapted from ira_photonfocus_driver which is detailed by IRALAB. 
+This branch is modified in order to be suitable for polarcam. 
+The master branch is updated with the IRALAB release. 
+If you clone this repo from I2Cvb and would like to update the master branch follow the steps below:
+- git add remote IRALAB https://github.com/iralabdisco/ira_photonfocus_driver.git
+- git remote update 
+- git pull IRALAB master
+
+
+Modifications from ira_photonfocus_driver 
+=======================
+
+
 ira_photonfocus_driver
 ======================
 ROS device driver for PhotonFocus cameras based on Pleora’s eBUS™ Software Development Kit (SDK)
